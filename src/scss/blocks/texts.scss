@@ -1,1 +1,11 @@
+.text {
+  margin: 0;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 26px;
+  color: #d9d9d9;
 
+  &--header {
+    margin-bottom: 24px;
+  }
+}
