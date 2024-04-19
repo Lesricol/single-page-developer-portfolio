@@ -1,11 +1,42 @@
+@use '../mixins/responsive.scss' as *;
+
 .title {
   margin: 0;
   font-weight: 700;
   font-size: 40px;
   line-height: 40px;
   letter-spacing: -1.14px;
+
+  @include responsive(tablet) {
+    font-size: 4.5rem;
+    line-height: 72px;
+    letter-spacing: -2.05px;
+    margin-bottom: 11px;
+  }
+  @include responsive(desktop) {
+    font-size: 5.5rem;
+    line-height: 88px;
+    letter-spacing: -2.5px;
+  }
   &--border {
     border-bottom: 4px solid var(--primary-color);
+    width: fit-content;
+    @include responsive(tablet) {
+      display: block;
+      width: fit-content;
+      margin-bottom: 60px;
+    }
+    @include responsive(desktop) {
+      margin-bottom: 43px;
+      border-bottom: 6px solid var(--primary-color);
+    }
+  }
+}
+
+.title--1 {
+  @include responsive(tablet) {
+    display: inline-block;
+    width: 410px;
   }
 }
 
