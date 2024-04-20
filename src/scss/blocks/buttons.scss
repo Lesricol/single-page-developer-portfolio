@@ -1,3 +1,5 @@
+@use '../mixins/responsive.scss' as *;
+
 .button {
   font-weight: 700;
   font-size: 1rem;
@@ -5,4 +7,27 @@
   letter-spacing: 2.29px;
   padding-bottom: 8px;
   border-bottom: 2px solid var(--primary-color);
+  &--footer{
+    width: fit-content;
+    background-color: transparent;
+    border: none;
+    font-weight: 700;
+  font-size: 1rem;
+  line-height: 26px;
+  letter-spacing: 2.29px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--primary-color);
+  color: white;
+  translate: 120%;
+  @include responsive(tablet) {
+    translate: 185%;
+  }
+  }
+}
+
+
+.buttons-container{
+  display: flex;
+  gap: 1.875rem;
+
 }

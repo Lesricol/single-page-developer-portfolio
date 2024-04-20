@@ -1,7 +1,7 @@
 @use '../mixins/responsive.scss' as *;
 
 .header {
-  padding: 20px 16px 0;
+  padding: 20px 16px 80px;
   text-align: center;
   background-image: url(../../assets/images/pattern-rings.svg), url(../../assets/images/pattern-circle.svg),
     url(../../assets/images/image-profile-mobile.webp);
@@ -10,6 +10,7 @@
   background-size: auto, auto, 174px 383px;
   @include responsive(tablet) {
     padding: 30px 30px 0;
+    margin-bottom: 60px;
     background-image: url(../../assets/images/pattern-rings.svg), url(../../assets/images/pattern-circle.svg),
       url(../../assets/images/image-profile-tablet.webp);
     background-position: -320px 80px, 680px 470px, bottom right;
@@ -20,6 +21,7 @@
 
   @include responsive(desktop) {
     padding: 39px 165px 0;
+    margin-bottom: 104px;
     background-image: url(../../assets/images/pattern-rings.svg), url(../../assets/images/pattern-circle.svg),
       url(../../assets/images/image-profile-desktop.webp);
     background-position: -320px 80px, 920px 500px, 990px 0;

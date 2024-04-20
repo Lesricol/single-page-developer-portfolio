@@ -1,0 +1,48 @@
+@use '../mixins/responsive.scss' as *;
+
+.footer{
+    padding: 60px 16px;
+    text-align: center;
+    background-color: #242424;
+
+    &__items{
+        width: 174px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 39px;
+    border-top: 1px solid white;
+    width: 100%;
+    @include responsive(tablet) {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    }
+    @include responsive(tablet) {
+        padding: 60px 32px;
+    }
+    @include responsive(desktop) {
+        text-align: left;
+        padding: 84px 165px ;
+    }
+}
+
+.footer-contact{
+    @include responsive(tablet) {
+        width: 445px;
+        margin-inline: auto;
+    }
+    @include responsive(desktop) {
+        width: 445px;
+        margin-inline: 0;
+    }
+}
+
+.footer-container{
+    @include responsive(desktop) {
+    display: flex;
+    gap: 220px;
+    }
+}
