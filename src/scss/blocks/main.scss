@@ -78,29 +78,3 @@
     position: relative;
   }
 }
-
-.box {
-  @include responsive(desktop) {
-    position: relative;
-  }
-
-  @include hover {
-    &::after {
-      opacity: 1;
-    }
-
-    & + h3 + div + .buttons-container {
-      opacity: 1;
-    }
-  }
-}
-.box::after {
-  @include responsive(desktop) {
-    @include pseudo {
-      background-color: #000000b6;
-      top: 0;
-      left: 0;
-      opacity: 0;
-    }
-  }
-}
