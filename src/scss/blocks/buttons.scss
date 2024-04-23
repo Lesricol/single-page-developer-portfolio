@@ -1,4 +1,5 @@
 @use '../mixins/responsive.scss' as *;
+@use '../mixins/hover.scss' as *;
 
 .button {
   font-weight: 700;
@@ -7,27 +8,41 @@
   letter-spacing: 2.29px;
   padding-bottom: 8px;
   border-bottom: 2px solid var(--primary-color);
-  &--footer{
+  &--footer {
     width: fit-content;
     background-color: transparent;
     border: none;
     font-weight: 700;
-  font-size: 1rem;
-  line-height: 26px;
-  letter-spacing: 2.29px;
-  padding-bottom: 8px;
-  border-bottom: 2px solid var(--primary-color);
-  color: white;
-  translate: 120%;
-  @include responsive(tablet) {
-    translate: 185%;
+    font-size: 1rem;
+    line-height: 26px;
+    letter-spacing: 2.29px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--primary-color);
+    color: white;
+    margin-left: auto;
   }
+  @include hover {
+    color: var(--primary-color);
   }
 }
 
-
-.buttons-container{
+.buttons-container {
   display: flex;
   gap: 1.875rem;
+  @include responsive(desktop) {
+    width: 540px;
+    height: 400px;
+    position: absolute;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    background-color: #000000b6;
+    opacity: 0;
 
+    @include hover {
+      opacity: 1;
+    }
+  }
 }

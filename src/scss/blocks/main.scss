@@ -1,73 +1,106 @@
 @use '../mixins/responsive.scss' as *;
+@use '../mixins/pseudo.scss' as *;
+@use '../mixins/hover.scss' as *;
 
-.main{
-    padding: 0 16px;
-    margin-bottom: 80px;
-    @include responsive(tablet) {
-        padding: 0 32px;
-    }
-    @include responsive(desktop) {
-        padding: 0 165px;
-    }
+.main {
+  padding: 0 16px;
+  margin-bottom: 80px;
+  @include responsive(tablet) {
+    padding: 0 32px;
+  }
+  @include responsive(desktop) {
+    padding: 0 165px;
+  }
 }
 
-.experience-container{
-    display: grid;
-    gap: 1.5rem;
-    padding: 40px;
-    border: 1px solid #979797;
-    border-left: transparent;
-     border-right: transparent;
-     margin-bottom: 80px;
-     @include responsive(tablet) {
-        grid-template-columns: repeat(2, 345px);
-        padding: 52px  0 0;
-        border-bottom: transparent;
-     }
-     @include responsive(desktop) {
-        grid-template-columns: repeat(3, 345px);
-     }
+.experience-container {
+  display: grid;
+  gap: 1.5rem;
+  padding: 40px;
+  border: 1px solid #979797;
+  border-left: transparent;
+  border-right: transparent;
+  margin-bottom: 80px;
+  @include responsive(tablet) {
+    grid-template-columns: repeat(2, 345px);
+    padding: 52px 0 0;
+    border-bottom: transparent;
+  }
+  @include responsive(desktop) {
+    grid-template-columns: repeat(3, 345px);
+  }
 }
 
-.experience-items{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    @include responsive(tablet) {
-        align-items: start;
+.experience-items {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @include responsive(tablet) {
+    align-items: start;
+  }
+}
+
+.projects-items {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.language-items {
+  display: flex;
+  gap: 1.125rem;
+  margin-bottom: 20px;
+}
+
+.portfolio {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  @include responsive(tablet) {
+    gap: 3.75rem;
+  }
+}
+
+.portfolio-items {
+  display: grid;
+  gap: 2.5rem;
+  @include responsive(tablet) {
+    grid-template-columns: repeat(2, 342px);
+    gap: 60px 22px;
+  }
+  @include responsive(desktop) {
+    grid-template-columns: repeat(2, 540px);
+    gap: 60px 22px;
+  }
+}
+.projects-card {
+  @include responsive(desktop) {
+    position: relative;
+  }
+}
+
+.box {
+  @include responsive(desktop) {
+    position: relative;
+  }
+
+  @include hover {
+    &::after {
+      opacity: 1;
     }
-}
 
-.projects-items{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.language-items{
-    display: flex;
-    gap: 1.125rem;
-    margin-bottom: 20px;
-}
-
-.portfolio{
-    display: flex;
-    flex-direction: column;
-    gap: 2.5rem;
-    @include responsive(tablet) {
-        gap: 3.75rem;
+    & + h3 + div + .buttons-container {
+      opacity: 1;
     }
+  }
 }
-
-.portfolio-items{
-    display: grid;
-    gap:2.5rem ;
-    @include responsive(tablet) {
-        grid-template-columns: repeat(2, 342px);
-        gap:  60px 22px;
+.box::after {
+  @include responsive(desktop) {
+    @include pseudo {
+      background-color: #000000b6;
+      top: 0;
+      left: 0;
+      opacity: 0;
     }
-    @include responsive(desktop) {
-        grid-template-columns: repeat(2, 540px);
-        gap:  60px 22px;
-    }
+  }
 }
